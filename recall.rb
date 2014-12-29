@@ -20,3 +20,12 @@ get '/' do
 	@title = 'All Notes'
 	erb :home
 end
+
+post '/' do
+	note = Note.new
+	note.content = params[:content]
+	note.created_at = Time.now
+	note.updated_at = Time.now
+	note.save
+	redirect '/'
+end
