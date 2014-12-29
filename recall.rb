@@ -29,3 +29,18 @@ post '/' do
 	note.save
 	redirect '/'
 end
+
+get '/:id' do
+	@note = Note.get params[:id]
+	@title = "Edit note ##{params[:id]}"
+	erb :edit
+end
+
+put '/:id' do
+	note = Note.get params[:id]
+	note.content = params[:content]
+	note.complete = params[:complete] ? 1 : 0
+	note.updated_at = Time.now
+	note.save
+	redirect '/'
+end
