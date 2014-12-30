@@ -3,10 +3,11 @@ require 'sinatra'
 require 'data_mapper'
 require 'builder'
 require 'sinatra/flash'
-
-enable :sessions
+require 'sinatra/redirect_with_flash'
 
 SITE_TITLE = "Todo"
+
+enable :sessions
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 
@@ -59,6 +60,7 @@ get '/:id' do
 		erb :edit
 	else	
 		redirect '/', flash[:error] = "Can't find that note."
+	end
 end
 
 put '/:id' do
@@ -107,5 +109,4 @@ get '/:id/complete' do
 	else
 		redirect '/', flash[:error] = 'Error marking your note as complete.'
 	end
-end
 end
