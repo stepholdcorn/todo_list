@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
+require 'builder'
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 
@@ -18,6 +19,11 @@ DataMapper.finalize.auto_upgrade!
 helpers do
 	include Rack::Utils
 	alias_method :h, :escape_html
+end
+
+get '/rss.xml' do
+	@notes = Note.all :order => :id.desc
+	builder :rss
 end
 
 get '/' do
