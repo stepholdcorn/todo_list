@@ -3,6 +3,8 @@ require 'sinatra'
 require 'data_mapper'
 require 'builder'
 
+SITE_TITLE = "Todo"
+
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 
 class Note
