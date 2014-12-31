@@ -1,6 +1,7 @@
 body {
     margin: 35px auto;
     width: 640px;
+    background-color: #EBF5FF;
 }
  
 header {
@@ -9,21 +10,17 @@ header {
 }
  
 header h1 {
+    color: #6599CC;
     display: inline;
-    font-size: 32px;
+    font-size: 36px;
+    font-family: 'Lobster', cursive;
 }
  
 header h1 a:link, header h1 a:visited {
-    color: #444;
+    color: #6599CC;
     text-decoration: none;
 }
- 
-header h2 {
-    font-size: 16px;
-    font-style: italic;
-    color: #999;
-}
- 
+  
 #main {
     margin: 0 0 20px;
 }
@@ -33,18 +30,24 @@ header h2 {
 }
  
 #add textarea {
+    resize: none;
     height: 30px;
     width: 510px;
     padding: 10px;
     border: 1px solid #ddd;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
 }
  
 #add input {
-    height: 50px;
+    height: 40px;
     width: 100px;
     margin: -50px 0 0;
-    border: 1px solid #ddd;
-    background: white;
+    border: 1px solid #6599CC;
+    border-radius: 25px;
+    background: #6599CC;
+    font-family: 'Roboto', sans-serif;
+	color: white;
 }
  
 #edit textarea {
@@ -55,11 +58,14 @@ header h2 {
 }
  
 #edit input[type=submit] {
-    height: 50px;
+    height: 40px;
     width: 100px;
     margin: -50px 0 0;
-    border: 1px solid #ddd;
-    background: white;
+    border: 1px solid #6599CC;
+    border-radius: 25px;
+    background: #6599CC;
+    font-family: 'Roboto', sans-serif;
+	color: white;
 }
  
 #edit input[type=checkbox] {
