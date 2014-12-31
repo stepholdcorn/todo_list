@@ -3,7 +3,6 @@ require 'sinatra'
 require 'data_mapper'
 require 'builder'
 require 'sinatra/flash'
-require 'sinatra/redirect_with_flash'
 
 SITE_TITLE = "Todo"
 
